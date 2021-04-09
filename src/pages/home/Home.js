@@ -3,12 +3,12 @@ import content from '../../data/content.json';
 import { LanguageContext } from '../../context/LanguageContext';
 
 function Home() {
-    const { test } = useContext(LanguageContext);
+    const { activeLanguage } = useContext(LanguageContext);
     return (
         <div className="page-container">
-            <p>{test}</p>
-            <h2>{content.nl.home.title}</h2>
-            <p>{content.nl.home.introText}</p>
+            <p>{activeLanguage}</p>
+            <h2>{content[activeLanguage].home.title}</h2>
+            <p>{content[activeLanguage].home.introText}</p>
         </div>
     );
 }

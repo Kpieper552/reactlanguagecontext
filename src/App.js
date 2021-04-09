@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,9 +11,18 @@ import AllPlants from './pages/allPlants/AllPlants';
 import { LanguageContext } from './context/LanguageContext';
 
 function App() {
+  const [language, toggleLanguage] = useState('es');
 
+  function setNl() {
+    toggleLanguage('nl')
+  }
+  function setEs() {
+    toggleLanguage('es')
+  }
   const data = {
-    test: "test",
+    activeLanguage: language,
+    setNlFunction: setNl,
+    setEsFunction: setEs,
   }
   return (
       <LanguageContext.Provider value={data}>
