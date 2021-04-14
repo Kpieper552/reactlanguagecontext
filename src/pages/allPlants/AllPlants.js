@@ -7,7 +7,6 @@ function AllPlants() {
 
     return (
         <div className="page-container">
-            <p>{activeLanguage}</p>
             <h2>{content[activeLanguage].plants.title}</h2>
             <p>{content[activeLanguage].plants.text}</p>
             <ul>

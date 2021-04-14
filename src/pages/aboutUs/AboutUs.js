@@ -8,7 +8,6 @@ function AboutUs() {
 
     return (
         <div className="page-container">
-            <p>{activeLanguage}</p>
             <h2>{content[activeLanguage].aboutUs.title}</h2>
             <p>Dit is je profielpagina!</p>
             <img src={writers} alt="Bob & Betsy"/>

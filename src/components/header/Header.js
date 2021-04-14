@@ -1,13 +1,16 @@
 import React, {useContext} from 'react';
 import { NavLink } from 'react-router-dom';
+import { LanguageContext } from "../../context/LanguageContext";
 import headerImage from '../../assets/wall-with-plants.jpg';
 import { ReactComponent as FlagNL } from '../../assets/netherlands.svg';
+import { ReactComponent as FlagES } from '../../assets/spain.svg';
 import content from '../../data/content.json';
 import './Header.css';
-import {LanguageContext} from "../../context/LanguageContext";
+
 
 function Header() {
-  const {activeLanguage} = useContext(LanguageContext);
+  const {activeLanguage, setNlFunction, setEsFunction} = useContext(LanguageContext);
+  console.log("hallo ik ben header");
   return (
     <>
       <header>
@@ -25,7 +28,10 @@ function Header() {
               </li>
             <li className="language-switch">
               <p>{content[activeLanguage].header.changeTo}</p>
-              <FlagNL />
+            </li>>
+            <li className="language-switch svg">
+                <button id="buttonNL"  onClick={setNlFunction}><FlagNL /></button>
+                <button id="buttonES"  onClick={setEsFunction}><FlagES /></button>
             </li>
           </ul>
         </nav>

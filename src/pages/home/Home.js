@@ -6,7 +6,6 @@ function Home() {
     const { activeLanguage } = useContext(LanguageContext);
     return (
         <div className="page-container">
-            <p>{activeLanguage}</p>
             <h2>{content[activeLanguage].home.title}</h2>
             <p>{content[activeLanguage].home.introText}</p>
         </div>
